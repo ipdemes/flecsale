@@ -81,11 +81,14 @@ set( FLECSALE_RUNTIME_MODEL ${FLECSI_RUNTIME_MODEL} )
 if ( FLECSALE_RUNTIME_MODEL STREQUAL "mpi" )
   set( ENABLE_MPI ON CACHE BOOL "" FORCE)
   set( FLECSALE_UNIT_POLICY MPI )
+elseif ( FLECSALE_RUNTIME_MODEL STREQUAL "hpx" )
+  set( ENABLE_MPI ON CACHE BOOL "" FORCE)
+  set( FLECSALE_UNIT_POLICY HPX )
 elseif ( FLECSALE_RUNTIME_MODEL STREQUAL "legion" )
   set( FLECSALE_UNIT_POLICY LEGION )
 else()
   MESSAGE( FATAL_ERROR 
-    "Unknown FLECSI_SP_RUNTIME_MODEL being used: ${FLECSI_SP_RUNTIME_MODEL}" )
+    "Unknown FLECSALE_RUNTIME_MODEL being used: ${FLECSALE_RUNTIME_MODEL}" )
 endif()
 
 #------------------------------------------------------------------------------#

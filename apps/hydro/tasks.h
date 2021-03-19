@@ -320,7 +320,7 @@ void apply_update(
 
 
   //auto delta_t = static_cast<real_t>( time_step );
-  real_t delta_t = future_delta_t;
+  real_t delta_t = future_delta_t.get();
 
   update_soln_time(time_cnt, initial_soln_time, delta_t, color_soln_time);
 
