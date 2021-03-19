@@ -39,12 +39,12 @@ string inputs_t::prefix = "shock_box_3d";
 string inputs_t::postfix = "dat";
 
 // output frequency
-size_t inputs_t::output_freq = 1e6;
+size_t inputs_t::output_freq = 0;
 
 // the CFL and final solution time
 real_t inputs_t::CFL = 1.0/3.0;
-real_t inputs_t::final_time = 0.2;
-size_t inputs_t::max_steps = 12;
+real_t inputs_t::final_time = 0.2e2;
+size_t inputs_t::max_steps = 50;
 
 // the equation of state
 eos_t inputs_t::eos =
